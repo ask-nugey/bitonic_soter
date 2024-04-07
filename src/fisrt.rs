@@ -17,5 +17,10 @@ fn sub_sort(x: &mut [u32], up: bool) {
 }
 
 fn compare_and_swap(x: &mut [u32], up: bool) {
-    unimplemented!()
+    let middle_point = x.len() / 2;
+    for i in 0..middle_point {
+        if (x[1] > x[middle_point + 1]) == up {
+            x.swap(i, middle_point + i)
+        }
+    }
 }
